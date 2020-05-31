@@ -23,10 +23,11 @@ public class SieveOfEratosthenes {
 		
 		while (p<n) {
 			// 3. remove all elements of the list that are multiples of p
-			for (int i = p*p; i<n; i+=p) {
+			for (int i = p*p; i<=n; i+=p) {
 				if (primes.contains(i)) primes.remove(primes.indexOf(i));	
 			}
 			// 4. Increment p to the next value in the ArrayList - this will be the next-lowest prime.
+			if (primes.indexOf(p) == primes.size()-1) break;
 			p = primes.get(primes.indexOf(p)+1);
 		}
 		// 5. The while loop continues until p is greater than n
