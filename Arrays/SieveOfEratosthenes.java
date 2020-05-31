@@ -27,7 +27,7 @@ public class SieveOfEratosthenes {
 				if (primes.contains(i)) primes.remove(primes.indexOf(i));	
 			}
 			// 4. Increment p to the next value in the ArrayList - this will be the next-lowest prime.
-			if (primes.indexOf(p) == primes.size()-1) break;
+			if (primes.indexOf(p) == primes.size()-1) break; // Are we at the end of the array?
 			p = primes.get(primes.indexOf(p)+1);
 		}
 		// 5. The while loop continues until p is greater than n
