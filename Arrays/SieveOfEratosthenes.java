@@ -21,16 +21,15 @@ public class SieveOfEratosthenes {
 		// 2. Start with p = 2, the first prime number
 		int p = 2;
 		
-		while (p<n) {
+		while (primes.indexOf(p)<(primes.size()-1)) {
 			// 3. remove all elements of the list that are multiples of p
 			for (int i = p*p; i<=n; i+=p) {
 				if (primes.contains(i)) primes.remove(primes.indexOf(i));	
 			}
 			// 4. Increment p to the next value in the ArrayList - this will be the next-lowest prime.
-			if (primes.indexOf(p) == primes.size()-1) break; // Are we at the end of the array?
 			p = primes.get(primes.indexOf(p)+1);
 		}
-		// 5. The while loop continues until p is greater than n
+		// 5. The while loop continues until p reaches the end of the list
 		
 		// 6. The "primes" ArrayList now contains only primes.
 
