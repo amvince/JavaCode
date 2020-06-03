@@ -24,17 +24,17 @@ public class BigInts {
 		sc.close();
 		
 		result = add(first, second);
-		display(first);
-		System.out.print(" + ");
-		display(second);
-		System.out.print(" = ");
-		display(result);
+		System.out.print(display(first) + " + ");
+		System.out.print(display(second)+" = ");
+		System.out.print(display(result));
 	}
 	
-	public static void display(ArrayList<Integer> value) {
+	public static String display(ArrayList<Integer> value) {
+		String res="";
 		for (Integer i : value) {
-			System.out.print(i);
+			res += i.toString();
 		}
+		return res;
 	}
 	
 	public static ArrayList<Integer> parse(String temp) {
