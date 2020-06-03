@@ -24,10 +24,18 @@ public class BigInts {
 		sc.close();
 		
 		result = add(first, second);
-		System.out.print(Arrays.toString(first.toArray()) + " + " + Arrays.toString(second.toArray()));
-		System.out.print(" = " + Arrays.toString(result.toArray()));
+		display(first);
+		System.out.print(" + ");
+		display(second);
+		System.out.print(" = ");
+		display(result);
 	}
-
+	
+	public static void display(ArrayList<Integer> value) {
+		for (Integer i : value) {
+			System.out.print(i);
+		}
+	}
 	
 	public static ArrayList<Integer> parse(String temp) {
 		ArrayList<Integer> result = new ArrayList<Integer>();
