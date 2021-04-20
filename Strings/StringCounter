@@ -1,0 +1,35 @@
+/**
+ * String Counter
+ * Counts the number of times every ascii character occurs.
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        countChar();
+    }
+
+    public static void countChar() {
+        String string = "Welcome to my world";
+        int counters[] = new int[256]; // assuming you would use only ASCII chars
+        for (final char c : string.toCharArray())
+        {
+            counters[c]++;
+        }
+        int maxCounter = 0;
+        for (final int counter : counters)
+        {
+            if (maxCounter < counter)
+            {
+                maxCounter = counter;
+            }
+        }
+        for (int i = 0; i < counters.length; i++)
+        {
+            if (counters[i] == maxCounter)
+            {
+                System.out.printf("%c has %d occurences.\n", i, counters[i]);
+            }
+        }
+    }
+}
